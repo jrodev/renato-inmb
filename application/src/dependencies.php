@@ -64,7 +64,15 @@ $container['loadJson'] = function ($c) {
 };
 
 // Agregegando Controller
+/*
+$fileList = glob('test/*');
 
+//Loop through the array that glob returned.
+foreach($fileList as $filename){
+   //Simply print them out onto the screen.
+   echo $filename, '<br>';
+}
+*/
 $container['MenuController'] = function ($c) {
 	return new App\Controllers\MenuController($c['view'], $c['router'], $c['loadJson']);
 };

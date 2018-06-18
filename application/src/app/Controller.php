@@ -1,14 +1,10 @@
 <?php
-namespace App\Controllers;
 
-use Libs\ChangeString;
-use Libs\CompleteRange;
-use Libs\ClearPar;
-/**
- * Acciones para el Controlador Home
- */
-class IndexController
+namespace App;
+
+class Controller
 {
+
     protected $view;
     protected $router;
     protected $dataLoader;
@@ -26,10 +22,22 @@ class IndexController
         $this->dataLoader = $loadJson;
     }
 
-    public function index($req, $resp, $args)
-    {
-        // -----
-        return $this->view->render($resp, 'views/home/index.twig');
+    /*
+    protected $ci;
+
+    public function __construct($ci) {
+        $this->ci = $ci;
+        $this->ci->db;
+        $this->flash = $ci->flash;
     }
 
+    public function redirect($route) {
+        header('Location: ' . $this->ci->router->pathFor($route), true, 302);
+        die();
+    }
+
+    public function render($response, $view, $args = []) {
+        return $this->ci->view->render($response, $view, $args);
+    }
+    */
 }
