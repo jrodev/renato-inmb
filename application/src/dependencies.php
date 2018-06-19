@@ -73,14 +73,15 @@ foreach($fileList as $filename){
    echo $filename, '<br>';
 }
 */
+/*
 $container['MenuController'] = function ($c) {
 	return new App\Controllers\MenuController($c['view'], $c['router'], $c['loadJson']);
 };
 
 $container['CocinaController'] = function ($c) {
 	return new App\Controllers\CocinaController($c['view'], $c['router'], $c['loadJson']);
-};
+};*/
 
 $container['HomeController'] = function ($c) {
-	return new App\Controllers\HomeController($c['view'], $c['router'], $c['loadJson']);
+	return new App\Controllers\IndexController($c['view'], $c['router'], $c['loadJson']);
 };

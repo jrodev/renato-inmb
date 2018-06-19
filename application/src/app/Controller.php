@@ -22,6 +22,10 @@ class Controller
         $this->dataLoader = $loadJson;
     }
 
+    public function render($response, $view, $args = []) {
+        return $this->ci->view->render($response, $view, $args);
+    }
+
     /*
     protected $ci;
 
@@ -34,10 +38,6 @@ class Controller
     public function redirect($route) {
         header('Location: ' . $this->ci->router->pathFor($route), true, 302);
         die();
-    }
-
-    public function render($response, $view, $args = []) {
-        return $this->ci->view->render($response, $view, $args);
     }
     */
 }
