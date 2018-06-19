@@ -83,5 +83,6 @@ $container['CocinaController'] = function ($c) {
 };*/
 
 $container['HomeController'] = function ($c) {
-	return new App\Controllers\IndexController($c['view'], $c['router'], $c['loadJson']);
+    $settings = $c->get('settings');
+	return new App\Controllers\IndexController($settings, $c['view'], $c['router']);
 };
