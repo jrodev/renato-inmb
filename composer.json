@@ -3,7 +3,7 @@
         "php": ">=5.5.0"
     },
     "scripts":{
-        "post-install-cmd": [
+        "pre-install-cmd": [
             "ls",
             "pwd",
             "composer install -d=application"
