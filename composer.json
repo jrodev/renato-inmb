@@ -6,7 +6,7 @@
         "post-install-cmd": [
             "ls",
             "pwd",
-            "composer install -d=./application"
+            "composer install -d=application/"
         ]
     }
 }
