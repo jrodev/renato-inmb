@@ -12,10 +12,12 @@ if (PHP_SAPI == 'cli-server') {
 require __DIR__ . '/../vendor/autoload.php';
 
 session_start();
-
+//phpinfo(); exit;
 // ----------------------------------------------------------------------------------------
 set_exception_handler(function($e) {
     error_log($e->getMessage());
+    d($e->getMessage());
+    // if "no driver" add mysql pdo php.ini
     exit('Something weird happened'); //something a user can understand
 });
 $dsn = "mysql:host=localhost;dbname=php-app-med;charset=utf8";
@@ -26,8 +28,8 @@ $options = [
 ];
 
 $GLOBALS["DB"] = new PDO($dsn, "root", "123456", $options);
-
-
+//d($GLOBALS["DB"]);
+$role = \Libs\Roles\Role::getRolePerms(2);
 
 exit;
 // ----------------------------------------------------------------------------------------
