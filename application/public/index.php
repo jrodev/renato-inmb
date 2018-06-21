@@ -13,6 +13,25 @@ require __DIR__ . '/../vendor/autoload.php';
 
 session_start();
 
+// ----------------------------------------------------------------------------------------
+set_exception_handler(function($e) {
+    error_log($e->getMessage());
+    exit('Something weird happened'); //something a user can understand
+});
+$dsn = "mysql:host=localhost;dbname=php-app-med;charset=utf8";
+$options = [
+    PDO::ATTR_EMULATE_PREPARES   => false, // turn off emulation mode for "real" prepared statements
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, //turn on errors in the form of exceptions
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, //make the default fetch be an associative array
+];
+
+$GLOBALS["DB"] = new PDO($dsn, "root", "123456", $options);
+
+
+
+exit;
+// ----------------------------------------------------------------------------------------
+
 // Instantiate the app
 $settings = require __DIR__ . '/../src/settings.php';
 $app = new \Slim\App($settings);
